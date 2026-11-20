@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-cream: #F8F4EC;
+  --color-sandstone-light: #EFE7D8;
+  --color-sandstone: #E5D9C3;
+  --color-sandstone-deep: #CBB799;
+  --color-umber: #2A1E17;
+  --color-umber-soft: #594335;
+  --color-bronze: #78552B;
+  --color-gold: #A6791E;
+  --color-gold-bright: #C69632;
+  --color-terracotta: #8C3F23;
+  --color-gallery-dark: #1B1410;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: var(--color-cream);
+    color: var(--color-umber);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  button, a, select, input {
+    &:focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: 2px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.museum-hairline {
+  border-color: rgba(42, 30, 23, 0.14);
+}
